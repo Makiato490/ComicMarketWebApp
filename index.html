@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/>
+    <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+  </head>
+  <body>
+    <!--それぞれのタイプ別のid text : textbox select : selectpull checkbox : checktext submit : subbtn-->
+    <h1 id="h1color">サークルまとめ</h1>
+    <div id="mapUrl">
+      <a href=【"マップのPDFのURL"】>白紙マップ</a>
+      <a href=【"マップのPDFのURL"】>ピン付きマップ</a>
+    </div>
+    <!--送信フォーム-->
+    <form action=【"GASで作成したサイトのURL"】method="post">
+        <input type="hidden" name="inType" value="1">
+        <table id="subform">
+          <tr><td>日程</td><td><select name="inDay" id="selectpull">
+                                <option value="1日目" selected>1日目</option>
+                                <option value="2日目" >2日目</option>
+                              </select>
+                            </td></tr>
+          <tr><td>曜日</td><td><select name="inDow" id="selectpull">
+                                <option value="土曜日" selected>土曜日</option>
+                                <option value="日曜日" >日曜日</option>
+                              </select>
+                            </td></tr>
+          <tr><td>ホール</td><td><select name="inHole" id="selectpull">
+                                  <option value="東" selected>東</option>
+                                  <option value="西" >西</option>
+                                  <option value="南" >南</option> 
+                                </select>
+                            </td></tr>
+          <tr><td>記号</td><td><input type="text" name="inSymbol" placeholder="記号 ex:あ" id="textbox"></td></tr>
+          <tr><td>番号</td><td><input type="text" name="inNo" placeholder="番号 ex:12" id="textbox"></td></tr>
+          <tr><td>AorB</td><td><select name="inAorB" id="selectpull">
+                                  <option value="a" selected>a</option>
+                                  <option value="b" >b</option>
+                                  <option value="ab" >ab</option> 
+                                </select>
+                            </td></tr>
+          <tr><td>サークル名</td><td><input type="text" name="inCircleName" placeholder="サークル名" id="textbox"></td></tr>
+          <tr><td>サークル主</td><td><input type="text" name="inCircleMaster" placeholder="サークル主" id="textbox"></td></tr>
+          <tr><td>TwitterID</td><td><input type="text" name="inTwtId" placeholder="TwitterID" id="textbox"></td></tr>
+          <tr><td>メモ</td><td><input type="text" name="inMemo" placeholder="メモ" id="textbox"></td></tr>
+          <tr><td>買うもの</td><td><input type="text" name="inItem" placeholder="買うもの" id="textbox"></td></tr>
+          <tr><td>金額</td><td><input type="text" name="inPrice" placeholder="値段" id="textbox"></td></tr>
+          <tr><td>登録</td><td><input type="submit" value="登録"></td></tr>
+        </table>
+    </form>
+    
+    <br><br>
+    <!--サークルリスト表示-->
+    <?!= outputSheet();?>
+
+
+
+
+
+
+  </body>
+</html>
