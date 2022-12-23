@@ -1,0 +1,2 @@
+# ComicMarketWebApp
+コミケのサークルリストを楽に作り確認するためのWebAppです
